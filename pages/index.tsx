@@ -4,27 +4,20 @@ import Add from "@components/home/addComponent";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900 w-full">
+    <div className="bg-gray-900 h-full w-full">
       <Head>
         <title>Today's todo list</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-full max-w-full border-l-4 border-yellow-600 ml-28">
-        <div className="flex flex-col -ml-28">
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Task />
-          <Add />
+      <div className="flex flex-col h-screen">
+        <div className="bg-gray-900">
+          <div className="flex-grow border-l-4 border-yellow-600 ml-28">
+            <div className="-ml-28 pb-20">
+              <Task />
+            </div>
+            <Add />
+          </div>
         </div>
       </div>
 
