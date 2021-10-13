@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Task from "@components/home/taskComponent";
 import Add from "@components/home/addComponent";
+import React, { useState } from "react";
+import AddModal from "@/components/common/addModal";
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="bg-gray-900 h-full w-full">
       <Head>
@@ -21,6 +25,7 @@ export default function Home() {
         </div>
       </div>
 
+      <AddModal showModal={showModal} setshowModal={setShowModal} />
       {/* <footer className="flex items-center justify-center w-full h-24 border-t">
         <a
           className="flex items-center justify-center"
@@ -34,4 +39,6 @@ export default function Home() {
       </footer> */}
     </div>
   );
-}
+};
+
+export default Home;
