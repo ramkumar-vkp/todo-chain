@@ -1,6 +1,6 @@
 export default function Add() {
   return (
-    <div className="fixed bottom-5 right-5 p-2 bg-yellow-600 rounded-full">
+    <div className="fixed bottom-10 right-10 p-2 bg-yellow-600 rounded-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"

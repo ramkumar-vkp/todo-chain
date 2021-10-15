@@ -20,6 +20,8 @@ const Home: React.FC = () => {
             <div className="-ml-28 pb-20">
               <Task />
             </div>
+          </div>
+          <div onClick={() => setShowModal(true)}>
             <Add />
           </div>
         </div>
