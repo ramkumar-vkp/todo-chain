@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface TaskState {
-  taskId: number;
+  taskId?: number;
   name: string;
   label: string;
   startTime: string;
@@ -26,42 +26,42 @@ export const taskSlice = createSlice({
       taskId: 1,
       name: "Task 1",
       label: "",
-      startTime: "Wed Oct 13 2021 14:21:21 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
     {
       taskId: 2,
       name: "Task 2",
       label: "",
-      startTime: "Wed Oct 13 2021 14:22:22 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
     {
       taskId: 3,
       name: "Task 3",
       label: "",
-      startTime: "Wed Oct 13 2021 14:23:23 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
     {
       taskId: 4,
       name: "Task 4",
       label: "",
-      startTime: "Wed Oct 13 2021 14:24:24 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
     {
       taskId: 5,
       name: "Task 5",
       label: "",
-      startTime: "Wed Oct 13 2021 14:25:25 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
     {
       taskId: 6,
       name: "Task 6",
       label: "",
-      startTime: "Wed Oct 13 2021 14:26:26 GMT+0530 (India Standard Time)",
+      startTime: "01:00",
       dateCreated: "",
     },
   ],

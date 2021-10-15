@@ -15,11 +15,11 @@ const Task: React.FC = () => {
   return (
     <>
       {tasks.map((task, key) => (
-        <div className="pt-8">
+        <div className="pl-4 pt-8">
           <div className="flex flex-row">
-            <div className="pr-7 flex-none">
-              <div className="bg-gray-300 rounded-xl w-24 px-3 ring-4 ring-gray-900 ring-inset font-semibold">
-                {moment(new Date(task.startTime)).format("hh:mm a")}
+            <div className="pr-16 flex-none">
+              <div className="bg-gray-300 rounded-xl w-16 px-3 ring-4 ring-gray-900 ring-inset font-semibold">
+                {task.startTime}
               </div>
             </div>
             <motion.div
