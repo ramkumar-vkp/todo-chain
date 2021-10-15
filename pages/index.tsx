@@ -3,9 +3,13 @@ import Task from "@components/home/taskComponent";
 import Add from "@components/home/addComponent";
 import React, { useState } from "react";
 import AddModal from "@/components/common/addModal";
+import { testdb } from "@/utils/dbutils";
 
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  if (typeof window === undefined) {
+    testdb();
+  }
 
   return (
     <div className="bg-gray-900 h-full w-full">
