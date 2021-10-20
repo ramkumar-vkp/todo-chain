@@ -6,12 +6,16 @@ import AddModal from "@/components/common/addModal";
 import { testdb } from "@/utils/dbutils";
 import { useUser } from "@auth0/nextjs-auth0";
 
+export async function getServerSideProps(context) {
+  testdb();
+  return {
+    props: {},
+  };
+}
+
 const Home: React.FC = () => {
   const { user, error, isLoading } = useUser();
   const [showModal, setShowModal] = useState(false);
-  // if (typeof window === undefined) {
-  //   testdb();
-  // }
 
   if (isLoading) {
     return (
@@ -31,14 +35,26 @@ const Home: React.FC = () => {
 
   if (user) {
     return (
-      <div className="bg-gray-900 h-full w-full">
+      <div className="bg-gray-300 h-screen w-full">
         <Head>
-          <title>Today's todo list</title>
+          <title>ToDo Chain</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <div className="flex flex-col h-screen">
-          <div className="bg-gray-900">
+        <div className="h-11 w-full bg-yellow-600">
+          <div className="flex flex-row justify-between">
+            <div className="px-2 py-1 m-2 bg-gray-300 rounded-md cursor-pointer text-gray-800 text-sm font-mono uppercase">
+              ToDo Chain
+            </div>
+            <div className="px-2 py-1 m-2 bg-gray-300 rounded-md cursor-pointer text-gray-800 text-sm font-mono ">
+              Welcome "{user.name}" email "{user.email}"
+            </div>
+            <div className="px-2 py-1 m-2 bg-gray-300 rounded-md cursor-pointer text-gray-800 text-sm font-mono uppercase">
+              <a href="/api/auth/logout">Logout</a>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <div className="bg-gray-300">
             <div className="flex-grow border-l-4 border-yellow-600 ml-28">
               <div className="-ml-28 pb-20">
                 <Task />
