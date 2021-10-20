@@ -12,6 +12,10 @@ export interface TaskState {
   completed: boolean;
 }
 
+export interface tasks {
+  tasks: TaskState[];
+}
+
 export const taskSlice = createSlice({
   name: "task",
   initialState: [
