@@ -17,6 +17,33 @@ export async function getServerSideProps(context) {
 const Home: React.FC = () => {
   const { user, error, isLoading } = useUser();
   const [showModal, setShowModal] = useState(false);
+  const [darkMode, setdarkMode] = useState("");
+
+  useEffect(() => {
+    if (darkMode == "dark") {
+      localStorage.theme = "dark";
+    } else {
+      localStorage.theme = "light";
+    }
+
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      console.log(
+        `Changing the html page to dark theme : ${localStorage.theme}`
+      );
+      document.documentElement.classList.add("dark");
+      localStorage.theme = "dark";
+    } else {
+      console.log(
+        `Changing the html page to light theme : ${localStorage.theme}`
+      );
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
+    }
+  }, [darkMode]);
 
   if (isLoading) {
     return (
@@ -41,7 +68,7 @@ const Home: React.FC = () => {
           <title>ToDo Chain</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <NavBar user={user} />
+        <NavBar user={user} darkMode={darkMode} setdarkMode={setdarkMode} />
 
         {/* <div className="h-11 w-full bg-yellow-600">
           <div className="flex flex-row justify-between">

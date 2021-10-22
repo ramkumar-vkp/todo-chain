@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function NavBar({ user }) {
+export default function NavBar({ user, darkMode, setdarkMode }) {
   const [isMobileMenuOpen, setisMobileMenuOpen] = useState(false);
 
   return (
@@ -41,6 +41,10 @@ export default function NavBar({ user }) {
 
           <div className="hidden md:flex space-x-4 items-center">
             <svg
+              onClick={() => {
+                console.log(`Before : Dark Mode : ${darkMode}`);
+                setdarkMode(darkMode === "light" ? "dark" : "light");
+              }}
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6 text-yellow-500 hover:text-yellow-700"
               fill="none"
