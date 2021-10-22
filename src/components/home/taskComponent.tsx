@@ -8,10 +8,6 @@ import {
   deleteTask,
   updateTask,
 } from "@/store/slices/taskSlice";
-interface TaskProps {
-  showModal: boolean;
-  setshowModal: Dispatch<SetStateAction<boolean>>;
-}
 
 const Task: React.FC = () => {
   const dispatch = useDispatch();

@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 
   if (user) {
     return (
-      <div className="bg-gray-300 h-screen w-full dark:bg-gray-600">
+      <div className="bg-gray-300 h-screen w-full dark:bg-gray-800">
         <Head>
           <title>ToDo Chain</title>
           <link rel="icon" href="/favicon.ico" />
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           </div>
         </div> */}
         <div className="flex flex-col">
-          <div className="bg-gray-300 dark:bg-gray-600">
+          <div className="bg-gray-300 dark:bg-gray-800">
             <div className="flex-grow border-l-4 border-yellow-600 ml-28">
               <div className="-ml-28 pb-20">
                 <Task />
