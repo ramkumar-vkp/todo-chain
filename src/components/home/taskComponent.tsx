@@ -34,7 +34,7 @@ const Task: React.FC = () => {
         <div className="pl-4 pt-8">
           <div className="flex flex-row">
             <div className="pr-16 flex-none">
-              <div className="bg-gray-300 rounded-xl w-16 px-3 ring-4 ring-red-600 ring-inset">
+              <div className="bg-gray-300 rounded-xl w-16 px-3 ring-4 ring-red-600 ring-inset dark:bg-gray-500 dark:ring-red-500 dark:text-gray-200">
                 {task.startTime}
               </div>
             </div>
@@ -45,7 +45,7 @@ const Task: React.FC = () => {
               <div
                 className={`flex flex-row rounded-xl ring-4 ring-red-600 ${
                   task.completed && `line-through bg-gray-400`
-                } bg-gray-300`}
+                } bg-gray-300  dark:bg-gray-500 dark:ring-red-500 dark:text-gray-200`}
               >
                 <div className="px-3">{task.name}</div>
 
@@ -54,7 +54,7 @@ const Task: React.FC = () => {
                     <div onClick={() => onDelete(task.taskId)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="text-red-600 mx-1 h-5 w-5"
+                        className="text-red-600 mx-1 h-5 w-5 dark:text-yellow-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -70,7 +70,7 @@ const Task: React.FC = () => {
                     <div onClick={() => onComplete(task.taskId)}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="text-green-600 mx-1 h-6 w-6"
+                        className="text-green-600 mx-1 h-6 w-6 dark:text-green-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

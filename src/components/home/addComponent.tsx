@@ -4,7 +4,7 @@ export default function Add() {
   return (
     <motion.div
       whileHover={{ scale: 1.5 }}
-      className="fixed bottom-10 right-10 p-2 bg-yellow-600 rounded-full"
+      className="fixed bottom-10 right-10 p-2 bg-yellow-400 rounded-full hover:bg-yellow-500"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
