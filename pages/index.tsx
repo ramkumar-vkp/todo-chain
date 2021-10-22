@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Task from "@components/home/taskComponent";
 import Add from "@components/home/addComponent";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddModal from "@/components/common/addModal";
 import { testdb } from "@/utils/dbutils";
 import { useUser } from "@auth0/nextjs-auth0";
+import NavBar from "@/components/home/NavBar";
 
 export async function getServerSideProps(context) {
   testdb();
@@ -40,7 +41,9 @@ const Home: React.FC = () => {
           <title>ToDo Chain</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <div className="h-11 w-full bg-yellow-600">
+        <NavBar user={user} />
+
+        {/* <div className="h-11 w-full bg-yellow-600">
           <div className="flex flex-row justify-between">
             <div className="px-2 py-1 m-2 bg-gray-300 rounded-md cursor-pointer text-gray-800 text-sm font-mono uppercase">
               ToDo Chain
@@ -52,7 +55,7 @@ const Home: React.FC = () => {
               <a href="/api/auth/logout">Logout</a>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col">
           <div className="bg-gray-300">
             <div className="flex-grow border-l-4 border-yellow-600 ml-28">
@@ -67,17 +70,6 @@ const Home: React.FC = () => {
         </div>
 
         <AddModal showModal={showModal} setshowModal={setShowModal} />
-        {/* <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer> */}
       </div>
     );
   } else {

@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: "class",
   mode: "jit",
   purge: [
     "./pages/**/*.{js,ts,jsx,tsx}",

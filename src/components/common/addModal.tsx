@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { addTask, deleteTask, updateTask } from "@/store/slices/taskSlice";
-import { randomUUID } from "crypto";
+import crypto from "crypto";
 interface Props {
   showModal: boolean;
   setshowModal: any;
@@ -15,6 +15,7 @@ interface TaskState {
   duration?: number;
   subTasks?: Array<string>;
   dateCreated: string;
+  completed: boolean;
 }
 
 const AddModal: React.FC<Props> = ({ showModal, setshowModal }) => {
@@ -39,12 +40,14 @@ const AddModal: React.FC<Props> = ({ showModal, setshowModal }) => {
     let startTime = event.target.startTime.value;
 
     let task: TaskState = {
-      taskId: randomUUID(),
+      taskId: crypto.randomBytes(16).toString("hex"),
       name: taskName,
       label: taskLabel,
       startTime: startTime,
       dateCreated: new Date().toString(),
+      completed: false,
     };
+
     dispatch(addTask(task));
     console.log(
       `taskName : ${taskName}, taskLabel : ${taskLabel}, startTime : ${startTime}`
