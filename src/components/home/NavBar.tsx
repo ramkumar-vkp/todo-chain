@@ -70,7 +70,7 @@ export default function NavBar({ user, darkMode, setdarkMode }) {
               />
             </svg>
             <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-md hover:bg-yellow-500 transition duration-300">
-              Logout
+            <a href="/api/auth/logout">Logout</a>
             </div>
           </div>
 
@@ -147,7 +147,7 @@ export default function NavBar({ user, darkMode, setdarkMode }) {
             />
           </svg>
           <div className="bg-yellow-400 text-gray-900 px-3 py-1 rounded-md hover:bg-yellow-500 transition duration-300">
-            Logout
+            <a href="/api/auth/logout">Logout</a>
           </div>
         </div>
       </div>
